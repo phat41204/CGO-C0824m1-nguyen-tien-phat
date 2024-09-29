@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let a =+prompt("nhập hệ số a")
+  let b =+prompt("nhập hệ số b")
+  let c =+prompt("nhập hệ số c")
+  let detal = b*b-4*a*c
+  if (detal< 0 ){
+    alert(" phương trình vô nghiệm")
+  }else if (detal === 0 ){
+      x= -(b/(2*a))
+    alert("phương trình có nghiệm kép : " + x)
+  }else if (detal>0 ) {
+    z = (-b + Math.sqrt(detal))/2*a
+    d = (-b - Math.sqrt(detal))/2*a
+    alert("phương trình có hai nghiệm x1 = "+z +"   "+ "x2=" + d)
+  }
+
+</script>
+
+</body>
+</html>

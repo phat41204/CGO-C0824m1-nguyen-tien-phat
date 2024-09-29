@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" placeholder="điểm 15 phút" id="15phut" >
+<input type="number" placeholder="điểm giữa kỳ" id="giuaky">
+<input type="number" placeholder="điểm học kỳ" id="học kỳ">
+<button onclick="ketqua()">kết quả</button>
+
+</body>
+<script>
+    function ketqua() {
+        let diem15phut = +document.getElementById("15phut").value
+        let giuaky = +document.getElementById("giuaky").value
+        let hocky = +document.getElementById("học kỳ").value
+
+        if ((diem15phut + giuaky + hocky) / 3 >= 8) {
+            alert("học sinh giỏi")
+        } else if ((diem15phut + giuaky + hocky) / 3 >= 6){
+            alert("học sinh khá")
+        }else if ((diem15phut + giuaky + hocky) / 3 >= 6) {
+            alert("học sinh trung bình")
+        }else {
+            alert("ko đạt")
+        }
+    }
+
+
+
+</script>
+</html>

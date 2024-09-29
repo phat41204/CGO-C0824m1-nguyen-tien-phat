@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" placeholder="bán kính hình tròn" id="r">
+<button onclick="dientich()">tính toán</button>
+<p id="dientich"></p>
+</body>
+
+<script>
+    function dientich(){
+        let r =+document.getElementById("r").value;
+        let dientichhinhtron = (3.14 * r );
+        document.getElementById("dientich").innerHTML= "diện tích hình tròn: " + dientichhinhtron
+    }
+
+
+
+</script>
+</html>

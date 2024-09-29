@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<input type="number" placeholder="nhập cân nặng ở đây" id="cannang">
+<input type="number" placeholder="nhập chiều cao ở đây" id="chieucao">
+<button onclick="ketqua()" > kết quả</button>
+<p id="ketqua" ></p>
+</body>
+<script>
+  function ketqua() {
+    let chieucao=+document.getElementById("chieucao")
+    let cannang=+document.getElementById("cannang")
+let BMI=cannang/(chieucao*2)
+    if (BMI < 18)
+      document.write("Underweight");
+    else if (BMI < 25.0)
+      document.write("Normal");
+    else if (BMI < 30.0)
+      document.write("Overweight");
+    else
+      document.write("Obese");
+  }
+</script>
+</html>

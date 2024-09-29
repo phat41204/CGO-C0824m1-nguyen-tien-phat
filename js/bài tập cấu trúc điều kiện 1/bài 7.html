@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   let basic = 100000
+   let premium =200000
+   let phut =+prompt("nhập số phút đã sử dụng")
+   if (phut <= 100){
+       bill= basic
+       alert("số tiền cước phải trả: " +bill)
+   }else if (phut > 100) {
+       bill= basic +(phut - 100) *1000
+       alert("số tiền cước phải trả: " +bill)
+   } if (phut <= 200){
+       bill = premium
+       alert("số tiền cước phải trả: " +bill)
+   }else if ( phut > 200) {
+       bill=premium + (phut-200)*1000
+       alert("số tiền cước phải trả: " +bill)
+   }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+  <tr>
+    <td>amount</td>
+    <td>from currncey</td>
+    <td>to currency</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><input type="number" id="amount"></td>
+    <td >
+      <select id="to" style="margin-left: 30px">
+        <option value="VND">VN</option>
+        <option value="USD">USD</option>
+      </select>
+      <select id="from"  style="margin-left: 30px" >
+        <option value="USD">USD</option>
+        <option value="VND">VN</option>
+      </select>
+    </td>
+    <td>
+<button onclick="doitien()" id="dt" style="margin-left: 50px">convert</button>
+    </td>
+  </tr>
+    <p id="kqdt"></p>
+
+</table>
+</body>
+<script>
+  function doitien() {
+    let to=document.getElementById("to").value
+    let from=document.getElementById("from").value
+    let sotien=document.getElementById("amount").value
+
+    if( to==="VND" && from==="USD"){
+      usd = sotien/22
+      document.getElementById("kqdt").innerHTML= usd +" đô"
+    } else if ( to==="USD" && from==="VND") {
+      vnd = sotien*22
+      document.getElementById("kqdt").innerHTML= vnd+" vnđ"
+    }else{
+      document.write("vui lòng chọn loai tiền khác nhau")
+    }
+  }
+
+</script>
+</html>

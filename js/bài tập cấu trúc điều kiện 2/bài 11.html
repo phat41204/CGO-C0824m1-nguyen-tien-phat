@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let thunhap=+prompt("nhập thu nhập cá nhân")
+  if (thunhap<=5000000){
+    alert("bạn được miễn thuế")
+  }else if(thunhap<=10000000){
+    let tax= (thunhap-5000000)*0.5
+    alert("số tiền thuế bạn phải đóng: "+tax+"vnđ")
+  }else if(thunhap<=18000000){
+    let tax =(10000000 - 5000000) * 0.05 + (thunhap - 10000000) * 0.1;
+    alert("số tiền thuế bạn phải đóng: "+tax+"vnđ")
+  }else if (thunhap <= 32000000) {
+    tax = (10000000 - 5000000) * 0.05 + (18000000 - 10000000) * 0.1 + (thunhap - 18000000) * 0.15
+     alert("số tiền thuế bạn phải đóng: "+tax+"vnđ")
+  }else if (thunhap <= 52000000) {
+    tax = (10000000 - 5000000) * 0.05 + (18000000 - 10000000) * 0.1 + (32000000 - 18000000) * 0.15 + (thunhap - 32000000) * 0.2
+     alert("số tiền thuế bạn phải đóng: "+tax+"vnđ")
+  }else if (thunhap <= 80000000) {
+    tax = (10000000 - 5000000) * 0.05 + (18000000 - 10000000) * 0.1 + (32000000 - 18000000) * 0.15 + (52000000 - 32000000) * 0.2 + (thunhap - 52000000) * 0.25;
+     alert("số tiền thuế bạn phải đóng: "+tax+"vnđ")
+  }else {
+    tax = (10000000 - 5000000) * 0.05 + (18000000 - 10000000) * 0.1 + (32000000 - 18000000) * 0.15 + (52000000 - 32000000) * 0.2 + (80000000 - 52000000) * 0.25 + (thunhap - 80000000) * 0.3;
+     alert("số tiền thuế bạn phải đóng: "+tax+"vnđ")
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" placeholder="Độ c (Celsius) " id="c">
+<br>
+<br>
+<button onclick="chuyendoi()">Nhập</button>
+<p id="ketqua"></p>
+<script>
+    function chuyendoi() {
+        let doC = +document.getElementById("c").value;
+        let doF = (9*doC / 5) + 32;
+        document.getElementById("ketqua").innerHTML = "ketqua :"+doF;
+    }
+</script>
+
+</body>
+</html>

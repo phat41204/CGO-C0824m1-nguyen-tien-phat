@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let doanhso= +prompt("nhập doanh số hàng tháng")
+    let hoahong;
+    if(doanhso >=20000000){
+        hoahong=20000000*0.2
+        alert("hoa hồng nhận được: "+hoahong)
+        if(doanhso >=30000000){
+            hoahong=30000000*0.3
+            alert("hoa hồng nhận được: "+hoahong)
+        }else {
+            alert("ko đạt đủ doanh số để nhận hoa hồng")
+        }
+    }
+
+</script>
+
+</body>
+</html>

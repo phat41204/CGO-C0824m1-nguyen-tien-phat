@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let kw = parseInt(prompt("nhập số điện tiêu thụ :"))
+  if (kw<=50){
+    let bill =50*1.6
+    alert("số tiền điện phải trả: "+bill+"vnđ")
+  }else if(kw<=100){
+      let bill = 50*1.6+(kw-50)*1.7
+    alert("số tiền điện phải trả: "+bill+"vnđ")
+  }else if(kw<=200) {
+    let bill = 50*1.6 +50*1.7 *(kw-100)*2.04
+    alert("số tiền điện phải trả: "+bill+"vnđ")
+  }else if(kw<=300){
+    let bill = 50 *1.6 +50*1.7+100*2.04+(kw-200)*2.5
+    alert("số tiền điện phải trả: "+bill+"vnđ")
+  }else if(kw<=400){
+    let bill =50*1.6 +50*1.7+100*2.04+100*2.5+(kw-300)*2.8
+    alert("số tiền điện phải trả: "+bill+"vnđ")
+  }else if (kw <= 500){
+    let bill =50*1.6 +50*1.7+100*2.04+100*2.5+100*2.8+(kw-400)*2.9
+    alert("số tiền điện phải trả: "+bill+"vnđ")
+  }else if(kw > 500) {
+    let bill =50*1.6 +50*1.7+100*2.04+100*2.5+100*2.8+(kw-400)*2.9
+    alert("số tiền điện phải trả: "+bill+"vnđ")
+  }
+
+</script>
+
+</body>
+</html>

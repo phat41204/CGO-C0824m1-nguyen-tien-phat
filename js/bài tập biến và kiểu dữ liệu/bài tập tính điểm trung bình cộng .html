@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" placeholder="điểm vật lý" id="vatly">
+<br>
+<br>
+<input type="number" placeholder="điểm vật lý" id="hoahoc">
+<br>
+<br>
+<input type="number" placeholder="điểm sinh học" id="sinhhoc">
+<br>
+<br>
+<button onclick="tinhdiem()">tính điểm</button>
+<br>
+<br>
+<p id="kết quả điểm"> </p>
+
+<script>
+   function tinhdiem(){
+       let vatly = +document.getElementById("vatly").value;
+       let hoahoc = +document.getElementById("hoahoc").value;
+       let sinhhoc = +document.getElementById("sinhhoc").value;
+       let diemtrungbinhcong = (vatly + hoahoc + sinhhoc)/3;
+
+       document.getElementById("kết quả điểm").innerHTML ="điểm trung bình cộng :"+ diemtrungbinhcong
+
+   }
+
+</script>
+
+
+</body>
+</html>

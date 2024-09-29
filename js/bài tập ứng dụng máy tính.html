@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" placeholder=" nhập số thứ nhất " id="so1">
+<input type="number" placeholder=" nhập số thứ hai " id="so2">
+<br>
+<br>
+<button onclick="nhan()">*</button>
+<button onclick="chia()">/</button>
+<button onclick="cong()">+</button>
+<button onclick="tru()">-</button>
+ <h3> kết quả : </h3>
+<p id="ketqua"></p>
+</body>
+<script>
+  function nhan(){
+    let so1=+document.getElementById("so1").value
+    let so2=+document.getElementById("so2").value
+    let ketqua=so1*so2
+    document.getElementById("ketqua").innerHTML=ketqua
+  }
+  function chia(){
+    let so1=+document.getElementById("so1").value
+    let so2=+document.getElementById("so2").value
+    let ketqua=so1/so2
+    document.getElementById("ketqua").innerHTML=ketqua
+  }
+  function cong(){
+    let so1=+document.getElementById("so1").value
+    let so2=+document.getElementById("so2").value
+    let ketqua=so1+so2
+    document.getElementById("ketqua").innerHTML=ketqua
+  }
+  function tru(){
+    let so1=+document.getElementById("so1").value
+    let so2=+document.getElementById("so2").value
+    let ketqua=so1-so2
+    document.getElementById("ketqua").innerHTML=ketqua
+  }
+</script>
+</html>

@@ -26,16 +26,16 @@
   }
 
   document.write('<br>')
-  for (let i = 1; i <= socham; i++) {
-      let row = '';
-      for (let j = 1; j <= i; j++) {
-          row += '* ';
-      }
-      for (let j = i; j <= socham; j++) {
-          row += ' &nbsp&nbsp';
-      }
 
-      document.write(row + '<br>'); // In ra từng hàng
+  for (let i = socham; i >= 1; i--) {
+      let row = ' '
+      for (let j = 1; j <= i; j++) {
+          row += '&nbsp&nbsp ';
+      }
+      for (let y = i ; y <= socham ; y ++){
+          row += "* "
+      }
+      document.write( row + '<br>');
   }
   document.write('<br>')
 
@@ -44,7 +44,7 @@
       for (let j = 1; j <= i; j++) {
           row += '&nbsp&nbsp ';
       }
-      for (let j = i; j <= socham; j++) {
+      for (let x = i; x <= socham; x++) {
           row += ' *';
       }
 

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let chieudai=10;
+    let chieurong=5;
+    for(let i = 0 ; i < chieurong ; i++) {
+        let row = ""
+        for (let j = 0; j < chieudai; j++) {
+            if (i === 0 || i === chieurong -1 || j === 0|| j === chieudai - 1 ) {
+
+                row += "*"
+            } else {
+                row += "&nbsp&nbsp"
+            }
+        }
+        document.write(row+"<br>")
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let dem = 0
+  let tong = 0
+  let so = 1
+  while (dem<30){
+    if (so % 7 === 0){
+      tong += so
+      dem ++
+    }
+    so++
+  }
+  console.log(tong)
+  document.write("tổng số chia hết cho 7 trong 30 số đầu tiên là: "+tong)
+</script>
+</body>
+</html>

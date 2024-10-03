@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let nhietdo ;
+  while (true){
+    nhietdo = +prompt(" nhập nhiệt độ");
+    if (nhietdo > 100){
+      document.write("nhiêt độ quá cao vui lòng giảm nhiệt độ")
+    } else  if (nhietdo<20){
+      document.write("nhiệt độ quá thấp vui lòng tăng nhiệt độ")
+    }else {
+      document.write("nhiệt độ hợp lý: " + nhietdo )
+      break;
+    }
+  }
+
+</script>
+</body>
+</html>

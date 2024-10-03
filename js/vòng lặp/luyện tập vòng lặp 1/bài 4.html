@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let a = 0;
+  let b = 1 ;
+ let tong ;
+  while(true){
+    tong= a + b;
+    if (tong % 5 === 0){
+      document.write("số fib chia hết cho 5 đầu tiên là : "+tong)
+      break;
+    }
+    a = b
+    b = tong
+  }
+</script>
+
+</body>
+</html>

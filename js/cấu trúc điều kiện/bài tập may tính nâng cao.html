@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculator</title>
+</head>
+<body>
+<input type="text" id="view">
+
+<table>
+  <tr>
+    <td><button type="button"  onclick="nhapso('1')">1</button></td>
+    <td><button type="button"  onclick="nhapso('2')">2</button></td>
+    <td><button type="button"  onclick="nhapso('3')">3</button></td>
+    <td><button type="button"  onclick="setPhepTinh('+')">+</button></td>
+  </tr>
+  <tr>
+    <td><button type="button"  onclick="nhapso('4')">4</button></td>
+    <td><button type="button"  onclick="nhapso('5')">5</button></td>
+    <td><button type="button"  onclick="nhapso('6')">6</button></td>
+    <td><button type="button"  onclick="setPhepTinh('-')">-</button></td>
+  </tr>
+  <tr>
+    <td><button type="button"  onclick="nhapso('7')">7</button></td>
+    <td><button type="button" onclick="nhapso('8')">8</button></td>
+    <td><button type="button"  onclick="nhapso('9')">9</button></td>
+    <td><button type="button"  onclick="setPhepTinh('*')">*</button></td>
+  </tr>
+  <tr>
+    <td><button type="button" onclick="xoa()">AC</button></td>
+    <td><button type="button"  onclick="nhapso('0')">0</button></td>
+    <td><button type="button" onclick="ketqua1()">=</button></td>
+    <td><button type="button"  onclick="setPhepTinh('/')">/</button></td>
+  </tr>
+</table>
+
+<script>
+  let view = document.getElementById("view");
+  let x ;
+  let y ;
+  let pheptinh ;
+
+  function nhapso(giatriso){
+    view.value += giatriso;
+  }
+
+  function setPhepTinh(giatripheptinh) {
+    x = parseFloat(view.value);
+    pheptinh = giatripheptinh;
+    view.value = '';
+  }
+
+  function ketqua1(){
+    y = parseFloat(view.value);
+
+    switch (pheptinh) {
+      case "+":
+        ketqua = x + y;
+        break;
+      case "-":
+        ketqua = x - y;
+        break;
+      case "*":
+        ketqua = x * y;
+        break;
+      case "/":
+        if (y === 0) {
+          alert("Không thể chia cho 0");
+          return;
+        }
+        ketqua = x / y;
+        break;
+      default:
+        return;
+    }
+
+    view.value = ketqua;
+    x = ketqua;
+    y = null;
+    pheptinh = null;
+  }
+
+  function xoa(){
+    view.value = "";
+    x = null;
+    y = null;
+    pheptinh = null;
+  }
+</script>
+</body>
+</html>

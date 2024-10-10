@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let mang = [];
+    let dem = 0;
+
+
+    for (let i = 0; i < 10; i++) {
+        let soNguyen = parseInt(prompt(`Nhập số nguyên thứ ${i + 1}:`));
+        mang.push(soNguyen);
+    }
+
+    for (let so of mang) {
+        if (so >= 10) {
+            dem++;
+        }
+    }
+    document.write(`số lượng số nguyên lớn hơn 10 là : ${dem}`)
+</script>
+</body>
+</html>

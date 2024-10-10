@@ -9,9 +9,9 @@
   let num = parseFloat(prompt("nhập số lượng số nguyên tố cần kiểm tra"))
   let count = 0 ;
   let n = 2 ;
-  let kiemtra = true ;
-  while(count  <  num) {
-    for (let i = 2 ; i <= Math.sqrt(n);i++){
+  while(count  < num) {
+      let kiemtra = true
+      for (let i = 2 ; i <= Math.sqrt(n);i++){
       if (n % i === 0){
         kiemtra = false ;
         break ;

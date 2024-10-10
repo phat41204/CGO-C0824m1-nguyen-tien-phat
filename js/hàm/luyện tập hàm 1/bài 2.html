@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+nhập 1 số bất kỳ<input id="input">
+<button onclick="hienthi()" >nhấn để tăng thêm 1 giá trị </button>
+<p id="result"></p>
+</body>
+<script>
+  function tanggiatri(num) {
+    return num +1
+  }
+
+  function hienthi(){
+    let inputnumber = +document.getElementById("input").value
+    let result = tanggiatri(inputnumber)
+    document.getElementById("result").innerHTML=result
+  }
+</script>
+</html>

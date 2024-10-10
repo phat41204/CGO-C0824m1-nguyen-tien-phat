@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function caculate(giaithua){
+    if (giaithua === 1 || giaithua ===0){
+      return "giai thừa bằng 1"
+    }else if(giaithua<0){
+      return "giai thừa ko xác định số âm"
+    }else {
+      let result = 1
+      for (let i = 2; i <=giaithua ; i++){
+        result *= i
+      }
+      return result
+    }
+  }
+  let giaithua =+prompt("nhập số muốn tính giai thừa")
+  let ketqua=caculate(giaithua)
+  document.write("giai thừa của số muốn tính bằng" + ketqua)
+</script>
+</body>
+</html>

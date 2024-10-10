@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let mang =[]
+    for (let i =0 ; i<10; i++)
+    {
+        let so = parseInt(prompt(`nhập vào số nguyên thứ ${i+1}`))
+    mang.push(so)
+
+    }
+    let v = +prompt("nhập vào 1 số nguyên :")
+    if (mang.includes(v)){
+        document.write(`${v} nằm trong mảng`)
+    }else {
+        document.write(`${v} không nằm trong mảng`)
+    }
+</script>
+</body>
+</html>

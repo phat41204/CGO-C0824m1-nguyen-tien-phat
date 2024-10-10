@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  let a = [];
+  let b = [];
+  let c = new Array(20);
+
+
+  for (let i = 0; i < 10; i++) {
+    let soA = parseInt(prompt(`Nhập số thứ ${i + 1} cho mảng a:`));
+    a.push(soA);
+  }
+
+
+  for (let i = 0; i < 10; i++) {
+    let soB = parseInt(prompt(`Nhập số thứ ${i + 1} cho mảng b:`));
+    b.push(soB);
+  }
+
+
+  for (let i = 0; i < 10; i++) {
+    c[i] = b[i];
+    c[i + 10] = a[i];
+  }
+
+
+  document.write(`Mảng c sau khi nối: ${c.join(', ')}`);
+</script>
+</body>
+</html>

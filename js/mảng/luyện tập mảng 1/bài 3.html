@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let mang = []
+
+  for (let i = 0 ; i < 10 ; i++){
+    let so = parseInt(prompt(`nhập số thứ ${i+1} `))
+    mang.push(so)
+
+  }
+  let  max = mang[0]
+
+  for (so of mang){
+    if (so > max){
+      max = so
+    }
+  }
+  document.write(`số lớn nhất là :` + max)
+
+</script>
+
+</body>
+</html>

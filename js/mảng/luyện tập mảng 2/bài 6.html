@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let mang = [];
+
+
+  for (let i = 0; i < 10; i++) {
+      let so = prompt(`Nhập ký tự thứ ${i + 1}:`);
+      mang.push(so);
+      for (let j = i; j < i; j++) {
+          if (mang[i] === '-') {
+              mang[i] = '_'
+          }
+
+      }
+  }
+  document.write(`kết quả sau khi thay thế ${mang.join(" , ")}`)
+</script>
+</body>
+</html>

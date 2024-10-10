@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let mang = [];
+
+
+    for (let i = 0; i < 10; i++) {
+        let so = parseInt(prompt(`Nhập số thứ ${i + 1}:`));
+        mang.push(so);
+    }
+
+
+    let v = parseInt(prompt("Nhập số nguyên V:"));
+
+
+    let index = mang.indexOf(v);
+
+    if (index !== -1) {
+
+        for (let i = index; i < mang.length - 1; i++) {
+            mang[i] = mang[i + 1];
+        }
+        mang[mang.length - 1] = 0;
+        document.write(`Đã xóa ${v} khỏi mảng.<br>`);
+    } else {
+        document.write(`${v} không nằm trong mảng.<br>`);
+    }
+
+
+    document.write(`Mảng sau khi xóa: ${mang.join(', ')}`);
+</script>
+</body>
+</html>

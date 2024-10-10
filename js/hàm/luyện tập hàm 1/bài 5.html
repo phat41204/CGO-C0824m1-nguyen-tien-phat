@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let nhap = prompt(" nhập tên ngôi sao : ")
+  let stars = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+  let constellations = ["Ursa Minor", "Taurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+function findstar(starname){
+  let a = stars.indexOf(starname)
+  if (a !== -1){
+    return constellations[a]
+  }else {
+    return "ko tìm thấy ngôi sao"
+  }
+}
+let ketqua = findstar(nhap)
+
+  alert(ketqua)
+</script>
+</body>
+</html>

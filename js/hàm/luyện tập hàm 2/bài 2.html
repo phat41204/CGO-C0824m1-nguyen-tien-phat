@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>Nhập bán kính (r):</label>
+<input type="number" id="radius" placeholder="Nhập bán kính" min="0" required>
+<button onclick="tinhtoan()">Tính</button>
+<p id="xuat"></p>
+</body>
+<script>
+  function tinhdientich(bankinh){
+    return Math.PI * Math.pow(bankinh, 2)
+  }
+  function tinhchuvi(bankinh) {
+    return 2 * Math.PI * bankinh;
+  }
+
+  function tinhtoan () {
+    const bankinh = parseInt(document.getElementById("radius").value)
+    if (isNaN(bankinh) || bankinh < 0) {
+      document.getElementById("xuat").innerHTML = "Vui lòng nhập bán kính hợp lệ.";
+      return;
+    }
+
+    let dientich = tinhdientich(bankinh)
+    let chuvi = tinhchuvi(bankinh)
+
+    document.getElementById("xuat").innerHTML = "diện tích hình tròn" + dientich + "  " + "chu vi hình tròn là " + chuvi
+  }
+</script>
+</html>

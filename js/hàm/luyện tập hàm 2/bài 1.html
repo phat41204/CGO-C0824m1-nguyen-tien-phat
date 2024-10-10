@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" placeholder="nhập số muốn tính bình phương " id="nhap">
+<button onclick="tinhtoan()"> tính </button>
+<p id="xuat" ></p>
+<script>
+    function tinhtoan() {
+        let sodcnhap = +document.getElementById("nhap").value
+
+        if (isNaN(sodcnhap)) {
+            document.getElementById("xuat").innerHTML = "vui lòng nhập số thích hợp"
+            return
+        }
+
+        const binhphuong = tinhbinhphuong(sodcnhap)
+
+        document.getElementById("xuat").innerHTML = binhphuong
+
+        function tinhbinhphuong(sodcnhap) {
+            return sodcnhap * sodcnhap
+        }
+    }
+</script>
+</body>
+</html>

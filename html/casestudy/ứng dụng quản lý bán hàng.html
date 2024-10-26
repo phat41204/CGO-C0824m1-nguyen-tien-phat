@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản Lý Sản Phẩm</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #5dac81;
+            margin-bottom: 30px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"], button {
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            width: calc(100% - 22px);
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus {
+            border-color: #5dac81;
+            outline: none;
+        }
+
+        button {
+            background-color: #5dac81;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: auto; /* Nút tự động chiều rộng */
+        }
+
+        button:hover {
+            background-color: #4a8c68;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #5dac81;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        #formadd {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            color: #333;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        #overlayer {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+    </style>
+</head>
+
+<body>
+<h1>WEB QUẢN LÝ SẢN PHẨM</h1>
+<div class="container">
+    <div>
+        <input type="text" id="productSearch" placeholder="Tìm sản phẩm" />
+        <button id="search">Search</button>
+        <br>
+        <label type="text" id="productAdd">thêm sản phẩm tại đây</label>
+        <button id="showformadd">Add</button>
+    </div>
+    <div id="result"></div>
+    <div id="overlayer"></div>
+    <div id="formadd">
+        <label for="id">ID</label><br>
+        <input id="id" type="text" placeholder="Nhập ID"><br>
+        <label for="name">Tên Sản Phẩm</label><br>
+        <input id="name" type="text" placeholder="Nhập tên"><br>
+        <label for="pricein">Giá Nhập</label><br>
+        <input id="pricein" type="text" placeholder="Nhập giá nhập"><br>
+        <label for="priceout">Giá Bán</label><br>
+        <input id="priceout" type="text" placeholder="Nhập giá bán"><br>
+        <label for="dateofmanufacture">Ngày Sản Xuất</label><br>
+        <input id="dateofmanufacture" type="text" placeholder="DD/MM/YYYY"><br>
+        <label for="expire">Ngày Hết Hạn</label><br>
+        <input id="expire" type="text" placeholder="DD/MM/YYYY"><br>
+        <label for="foodtype">Loại Thực Phẩm</label><br>
+        <input id="foodtype" type="text" placeholder="Nhập loại thực phẩm"><br>
+        <button id="add">Thêm</button>
+        <button id="update" style="display: none;">Cập Nhật</button>
+        <button id="close">Đóng</button>
+    </div>
+</div>
+
+<script>
+    class Product {
+        constructor(id, name, pricein, priceout, Dateofmanufacture, expire, foodtype) {
+            this.id = id;
+            this.name = name;
+            this.pricein = pricein;
+            this.priceout = priceout;
+            this.Dateofmanufacture = Dateofmanufacture;
+            this.expire = expire;
+            this.foodtype = foodtype;
+        }
+    }
+
+    let product = [];
+    product.push(new Product(1, "Sữa Vinamilk", "8000", "10000", "21/2/2023", "21/2/2026", "Đồ Uống"));
+    product.push(new Product(2, "Bánh Kẹo", "14000", "20000", "01/01/2023", "01/01/2025", "Đồ Ăn Vặt"));
+    display(product);
+
+    function display(product) {
+        let result = '<table>';
+        result += '<tr>';
+        result += '<th>Mã Sản Phẩm</th>';
+        result += '<th>Tên Sản Phẩm</th>';
+        result += '<th>Giá Nhập</th>';
+        result += '<th>Giá Bán</th>';
+        result += '<th>Ngày Sản Xuất</th>';
+        result += '<th>Ngày Hết Hạn</th>';
+        result += '<th>Loại Thực Phẩm</th>';
+        result += '<th></th>';
+        result += '<th></th>';
+        result += '</tr>';
+        for (let i = 0; i < product.length; i++) {
+            result += '<tr>';
+            result += `<td>${product[i].id}</td>`;
+            result += `<td>${product[i].name}</td>`;
+            result += `<td>${product[i].pricein}</td>`;
+            result += `<td>${product[i].priceout}</td>`;
+            result += `<td>${product[i].Dateofmanufacture}</td>`;
+            result += `<td>${product[i].expire}</td>`;
+            result += `<td>${product[i].foodtype}</td>`;
+            result += `<td><button onclick="edit(${i})">Sửa</button></td>`;
+            result += `<td><button onclick="delet(${i})">Xoá</button></td>`;
+            result += '</tr>';
+        }
+        result += "</table>";
+        document.getElementById("result").innerHTML = result;
+    }
+
+    function delet(i) {
+        let xoa = confirm(`Bạn có chắc muốn xoá sản phẩm này?`);
+        if (xoa) {
+            product.splice(i, 1);
+            display(product);
+            alert("Đã xoá sản phẩm thành công");
+        }
+    }
+
+    document.getElementById("search").addEventListener("click", function () {
+        let productSearch = document.getElementById("productSearch").value.toLowerCase();
+        let result = product.filter(p => p.name.toLowerCase().includes(productSearch));
+        display(result);
+    });
+
+    document.getElementById("showformadd").addEventListener("click", function () {
+        document.getElementById("formadd").style.display = "block";
+        document.getElementById("overlayer").style.display = "block";
+    });
+
+    document.getElementById("add").addEventListener("click", function () {
+        let id = document.getElementById("id").value;
+        let name = document.getElementById("name").value;
+        let pricein = document.getElementById("pricein").value;
+        let priceout = document.getElementById("priceout").value;
+        let Dateofmanufacture = document.getElementById("dateofmanufacture").value;
+        let expire = document.getElementById("expire").value;
+        let foodtype = document.getElementById("foodtype").value;
+
+        if (id && name && pricein && priceout && Dateofmanufacture && expire && foodtype) {
+            product.push(new Product(id, name, pricein, priceout, Dateofmanufacture, expire, foodtype));
+            display(product);
+            alert("Sản phẩm đã được thêm thành công");
+            closeForm();
+        } else {
+            alert("Vui lòng điền đầy đủ thông tin.");
+        }
+    });
+
+    document.getElementById("close").addEventListener("click", function () {
+        closeForm();
+    });
+
+    function closeForm() {
+        document.getElementById("formadd").style.display = "none";
+        document.getElementById("overlayer").style.display = "none";
+        document.getElementById("id").value = '';
+        document.getElementById("name").value = '';
+        document.getElementById("pricein").value = '';
+        document.getElementById("priceout").value = '';
+        document.getElementById("dateofmanufacture").value = '';
+        document.getElementById("expire").value = '';
+        document.getElementById("foodtype").value = '';
+    }
+    function edit(i){
+    let info = product[i]
+        document.getElementById("id").value = info.id
+        document.getElementById("name").value = info.name
+        document.getElementById("pricein").value = info.pricein
+        document.getElementById("priceout").value = info.priceout
+        document.getElementById("dateofmanufacture").value = info.Dateofmanufacture
+        document.getElementById("expire").value = info.expire
+        document.getElementById("foodtype").value = info.foodtype
+        document.getElementById("overlayer").style.display = "block"
+        document.getElementById("add").style.display = "none"
+        document.getElementById("update").style.display = "block"
+        document.getElementById("formadd").style.display = "block"
+        document.getElementById("update").onclick = function () {
+            update(i);
+        };
+
+    }
+
+    function update (i){
+        let id = document.getElementById("id").value;
+        let name = document.getElementById("name").value;
+        let pricein = document.getElementById("pricein").value;
+        let priceout = document.getElementById("priceout").value;
+        let Dateofmanufacture = document.getElementById("dateofmanufacture").value;
+        let expire = document.getElementById("expire").value;
+        let foodtype = document.getElementById("foodtype").value;
+        if (name && pricein && priceout && Dateofmanufacture && expire && foodtype) {
+            product[i] = new Product(id, name, pricein, priceout, Dateofmanufacture, expire, foodtype);
+            display(product);
+            alert("Sản phẩm đã được cập nhật thành công");
+            closeForm();
+        } else {
+            alert("Vui lòng điền đầy đủ thông tin.");
+        }
+    }
+
+</script>
+</body>
+</html>

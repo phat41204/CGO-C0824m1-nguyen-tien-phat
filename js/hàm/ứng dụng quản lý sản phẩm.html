@@ -40,7 +40,7 @@
         for (let i = 0; i < products.length; i++) {
             result += "<tr>"
             result += `<td>${products[i]}</td>`
-            result += `<td><button>Edit</button></td>`
+            result += `<td><button onclick="edit(i)">Edit</button></td>`
             result += `<td><button onclick="deleteProduct(${i})">Delete</button></td>`
             result += "</tr>"
         }
@@ -69,18 +69,22 @@
     document.getElementById("search").addEventListener("click", function () {
         let productSearch = document.getElementById("productSearch").value;
         // filter. Phương án 1
-        let result = products.filter(product => product.includes(productSearch))
+        // let result = products.filter(product => product.includes(productSearch))
         // Phương án 2
-        // let result=[]
-        // for (let i = 0; i < products.length; i++) {
-        //     if(products[i].includes(productSearch)) {
-        //         result.push(products[i])
-        //     }
-        // }
+        let result=[]
+        for (let i = 0; i < products.length; i++) {
+            if(products[i].includes(productSearch)) {
+                result.push(products[i])
+            }
+        }
         display(result)
     })
     let products = ["Nokia", "Iphone", "Samsung", "Xiaomi", "Oppo"];
     display(products);
+    function edit(i){
+
+    }
+
 </script>
 </body>
 </html>

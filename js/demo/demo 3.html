@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function tinhtoan(){
+        let mang = []
+        let nhaptiep = true
+        while (nhaptiep){
+            let phantu= prompt("nhập 1 phần từ khi nào muốn ngưng bấm 'yes'")
+            if (phantu.toLowerCase() === "yes"){
+                nhaptiep = false
+            }else if (isNaN(Number(phantu))){
+                alert("vui lòng nhập số")
+            }
+            else {
+                mang.push(Number(phantu))
+            }
+        }
+        document.write(`mảng ban đầu ${mang} <br>`)
+        let tong = 0
+        for (let i=0 ; i< mang.length; i++){
+            if (mang[i] % 2 !== 0){
+                 tong += mang[i]
+            }
+        }
+        document.write(`tổng các số lẻ trong mảng là ${tong} <br>`)
+        let k = +prompt("nhập 1 số để kiểm tra nó có trong mảng hay không")
+        // if ( mang.includes(k)){
+        //     alert(`${k} có tồn tại trong mảng `)
+        // }else {
+        //     alert(`${k} không tồn tại trong mảng`)
+        // }
+        let kiemtra = mang.indexOf(k)
+        if (kiemtra !== -1 ){
+            alert(`phần tử ${k} xuất hiện tại vị trí ${kiemtra} `)
+        }else {
+            alert(`phần tử ${k} không tồn tại trong mảng`)
+        }
+        mang.sort((x,y) => x-y)
+        document.write(`mảng sau khi xắp sếp : ${mang} <br>`)
+
+        let p = +prompt("nhập 1 số để chèn vào mảng")
+        mang.push(p)
+        mang.sort((x,y) => x-y)
+        document.write(`mảng sau khi chèn ${p} và được xắp sếp lại ${mang}`)
+
+    }
+    tinhtoan()
+</script>
+</body>
+</html>

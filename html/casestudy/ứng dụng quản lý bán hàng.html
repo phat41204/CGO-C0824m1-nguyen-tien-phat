@@ -19,7 +19,7 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 80%;
             margin: auto;
             padding: 20px;
             background-color: white;
@@ -88,6 +88,7 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
             z-index: 1000;
+            width: 400px;
         }
 
         #overlayer {
@@ -150,8 +151,27 @@
     }
 
     let product = [];
-    product.push(new Product(1, "Sữa Vinamilk", "8000", "10000", "21/2/2023", "21/2/2026", "Đồ Uống"));
-    product.push(new Product(2, "Bánh Kẹo", "14000", "20000", "01/01/2023", "01/01/2025", "Đồ Ăn Vặt"));
+    product.push(new Product(1, "Sữa tươi Vinamilk", "25000", "30000", "01/01/2023", "01/01/2025", "Đồ uống"));
+    product.push(new Product(2, "Bánh mì Pháp", "5000", "10000", "01/10/2023", "01/10/2024", "Thực phẩm"));
+    product.push(new Product(3, "Gạo ST25", "15000", "18000", "01/12/2022", "01/12/2025", "Nguyên liệu"));
+    product.push(new Product(4, "Thịt gà sạch", "70000", "80000", "05/10/2023", "05/11/2023", "Thịt"));
+    product.push(new Product(5, "Thịt bò Mỹ", "300000", "350000", "15/09/2023", "15/10/2023", "Thịt"));
+    product.push(new Product(6, "Trứng gà ta", "30000", "35000", "01/01/2023", "01/01/2024", "Thực phẩm"));
+    product.push(new Product(7, "Rau muống", "2000", "5000", "01/10/2023", "01/11/2023", "Rau củ"));
+    product.push(new Product(8, "Táo", "30000", "40000", "01/10/2023", "01/11/2023", "Trái cây"));
+    product.push(new Product(9, "Coca-Cola", "12000", "15000", "01/10/2023", "01/10/2025", "Đồ uống"));
+    product.push(new Product(10, "Bia Tiger", "15000", "18000", "01/01/2023", "01/01/2025", "Đồ uống"));
+    product.push(new Product(11, "Snack khoai tây", "15000", "20000", "01/09/2023", "01/09/2024", "Đồ ăn vặt"));
+    product.push(new Product(12, "Kẹo dẻo", "10000", "12000", "01/08/2023", "01/08/2024", "Đồ ăn vặt"));
+    product.push(new Product(13, "Muối", "5000", "7000", "01/05/2023", "01/05/2026", "Gia vị"));
+    product.push(new Product(14, "Nước tương Maggi", "20000", "25000", "01/01/2023", "01/01/2025", "Gia vị"));
+    product.push(new Product(15, "Mì Hảo Hảo", "3000", "5000", "01/07/2023", "01/07/2025", "Thực phẩm"));
+    product.push(new Product(16, "Sữa đặc Ông Thọ", "15000", "18000", "01/09/2023", "01/09/2025", "Đồ uống"));
+    product.push(new Product(17, "Nước lọc Aquafina", "7000", "9000", "01/01/2023", "01/01/2024", "Đồ uống"));
+    product.push(new Product(18, "Pizza", "80000", "90000", "01/10/2023", "01/10/2024", "Thức ăn nhanh"));
+    product.push(new Product(19, "Dầu ăn Neptune", "30000", "35000", "01/12/2023", "01/12/2026", "Gia vị"));
+    product.push(new Product(20, "Xà phòng Dove", "20000", "25000", "01/01/2023", "01/01/2025", "Mỹ phẩm"));
+
     display(product);
 
     function display(product) {

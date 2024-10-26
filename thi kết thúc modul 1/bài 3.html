@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 3</title>
+</head>
+<body>
+<script>
+    function DemCapSo (arr,k){
+        let Dem = 0
+        for (let i = 0 ; i <arr.length ; i++){
+            for ( let j = i + 1 ; j < arr.length; j++){
+                if ((arr[i]+arr[j]) %  k === 0 ){
+                    Dem++
+                }
+            }
+        }
+        return Dem
+    }
+    function NhapMang(){
+        let arr = []
+        let maxarr = 50
+        let k = + prompt("Nhập số mà bạn muốn các cặp số có tổng chia hết cho chính nó:")
+    for (let i = 0 ; i <maxarr; i ++){
+        let input = +prompt("nhập số nguyên (hoặc nhập -1 để dừng lại) : ")
+        if (isNaN(input)){
+            alert("vui lòng nhập giá một số nguyên hợp lệ :")
+            i --
+    }else if (input === -1){
+            break
+        }else {
+            arr.push(input)
+        }
+    }
+    return {arr , k}
+    }
+    let save = NhapMang()
+    let arr = save.arr
+    let k = save.k
+    let result = DemCapSo(arr, k)
+    document.write("mảng đã nhập " + arr + '<br>')
+    document.write("số cặp có tổng chia hết cho " + k + " là : " + result)
+</script>
+</body>
+</html>

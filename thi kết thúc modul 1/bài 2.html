@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 2</title>
+</head>
+<body>
+<script>
+function LamTronDiem(x){
+        if (x < 48){
+            return x
+        }
+
+    let LamTron = (Math.floor(x/5)+1)*5
+
+    if (LamTron - x < 3 ){
+        return LamTron
+    }
+    return x
+}
+let x = + prompt(" nhập số điểm của học sinh bạn muốn làm tròn")
+if (isNaN(x)){
+    alert("vui lòng nhập lại ")
+}else {
+    document.write("điểm của học sinh khi được làm tròn theo quy tắc: " + LamTronDiem(x))
+}
+
+
+</script>
+</body>
+</html>
